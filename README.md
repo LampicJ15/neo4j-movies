@@ -19,7 +19,7 @@ contains over 300k movies, from end of 19th century to august 2017. With this da
 
 1. First clone the repository in the desired directory `git clone https://github.com/LampicJ15/neo4j-movies.git`.
 2. `cd neo4j-movies`
-3. Run `docker-compose up -d` (hint: run `docker-compose logs -f` to tack log files).
+3. Run `docker-compose up -d` (hint: run `docker-compose logs -f` to track log files).
 4. Log onto Neo4j browser: http://localhost:7474/browser/.
 
 ## Data Import
@@ -37,14 +37,14 @@ CALL apoc.cypher.runSchemaFile("file:///schema.cypher");
 We then import data about the movies by copying the content of the `import-movies.cypher` file
 ou again calling an apoc procedure to do the work for us. 
 ```
-CALL apoc.cypher.runFile("file:///AllMoviesDetailsCleaned.csv");
+CALL apoc.cypher.runFile("file:///import-movies.cypher");
 ```
 
 After importing details about the movies all that is left is to import data 
 about actor, directors, ... We again do this by either copying the content of the `import-casting.cypher` 
 file or by calling the given apoc procedure:
 ```
-CALL apoc.cypher.runFile("file:///AllMoviesCastingRaw.csv");
+CALL apoc.cypher.runFile("file:///import-casting.cypher");
 ```
 
 ## Data Exploring
