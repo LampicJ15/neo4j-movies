@@ -1,11 +1,11 @@
 CALL apoc.periodic.iterate(
 "
-CALL apoc.load.csv('AllMoviesDetailsCleaned.csv',
+CALL apoc.load.csv('/movies/AllMoviesDetailsCleaned.csv',
 {header:  true,
-nullValues : ['none', '0.0', '0'],
+nullValues : ['none', '0.0', '0',''],
 sep: ';',
 ignore: ['','overview', 'tagline', 'production_companies_number','production_countries_number', 'spoken_languages_number', 'original_title'],
- mapping: {
+mapping: {
             id:      {type: 'int'},
             popularity: {type: 'float'},
             revenue: {type: 'int'},
@@ -89,5 +89,5 @@ MERGE (movie)-[:OF_GENRE]->(g)
 RETURN true',
 'RETURN true',
 {movie: movie, map: map}) YIELD value
-RETURN value
-", {batchSize: 1000, parallel: false});
+RETURN true
+", {batchSize: 10000, parallel: false});

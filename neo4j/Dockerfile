@@ -1,4 +1,4 @@
-FROM graphfoundation/ongdb:3.5
+FROM neo4j:3.5.22
 
 RUN apt update
 RUN apt install -y wget
