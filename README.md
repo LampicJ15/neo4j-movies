@@ -20,7 +20,7 @@ contains over 300k movies, from end of 19th century to august 2017. With this da
 1. First clone the repository in the desired directory `git clone https://github.com/LampicJ15/neo4j-movies.git`.
 2. `cd neo4j-movies`
 3. Run `docker-compose up -d` (hint: run `docker-compose logs -f` to track log files).
-4. Log onto Neo4j browser: http://localhost:7474/browser/ with a username: *neo4j* and password: *neo4j*.
+4. Log onto Neo4j browser: http://localhost:7474/browser/ with the username: *neo4j* and password: *neo4j* and start executing queries and exploring the graph.
 
 ## Data Import
 
